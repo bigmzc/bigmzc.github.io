@@ -79,13 +79,14 @@
 
 
 
+<meta name="keywords" content="Java,springboot,springcloud,博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="nexxt95">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="nexxt95">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="nexxt95">
 
 
 
@@ -121,7 +122,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>nexxt95</title>
   
 
 
@@ -152,12 +153,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">nexxt95</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">致力成为中国倒数第一,世界倒数的Java开发者</p>
       
   </div>
 
@@ -232,13 +233,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/test-title/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="nexxt95">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="nexxt95">
     </span>
 
     
@@ -299,192 +300,17 @@
 
       
         
-          
-            <h3 id="函数式数据处理"><a href="#函数式数据处理" class="headerlink" title="函数式数据处理"></a>函数式数据处理</h3><h4 id="1-流的概念"><a href="#1-流的概念" class="headerlink" title="1. 流的概念"></a>1. 流的概念</h4><p>集合:用来存储数据的容器</p>
-<p>流(Stream): 用来处理数据的工具      </p>
-<p>优势:</p>
-<ol>
-<li>简化编程  </li>
-<li>提高数据的处理效率</li>
-</ol>
-<h4 id="2-流的运算过程"><a href="#2-流的运算过程" class="headerlink" title="2. 流的运算过程"></a>2. 流的运算过程</h4><pre><code>由数据源放入流中开始，中间操作之后全部是流式处理结果，流处理结果经过终端操作后才能转化为结果数据：
-</code></pre><h4 id="数据源——–-gt-中间操作——–-gt-中间操作——–-gt-终端操作———-gt-结果数据"><a href="#数据源——–-gt-中间操作——–-gt-中间操作——–-gt-终端操作———-gt-结果数据" class="headerlink" title="数据源——–&gt;中间操作——–&gt;中间操作——–&gt;终端操作———&gt;结果数据"></a>数据源——–&gt;中间操作——–&gt;中间操作——–&gt;终端操作———&gt;结果数据</h4><h5 id="中间操作-Stream-lt-T-gt"><a href="#中间操作-Stream-lt-T-gt" class="headerlink" title="中间操作: Stream&lt;T&gt;"></a>中间操作: <code>Stream&lt;T&gt;</code></h5><table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:center">作用</th>
-<th style="text-align:center">返回值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">filter(Predicate)</td>
-<td style="text-align:center">过滤 , 筛选</td>
-<td style="text-align:center">Stream<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">sorted(Comparator)</td>
-<td style="text-align:center">排序</td>
-<td style="text-align:center">Stream<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">distinct()</td>
-<td style="text-align:center">去重</td>
-<td style="text-align:center">Stream<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">limit(long)</td>
-<td style="text-align:center">取前几个元素</td>
-<td style="text-align:center">Stream<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">skip(int)</td>
-<td style="text-align:center">跳过前几个元素</td>
-<td style="text-align:center">Stream<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">map(Function&lt;T,R&gt;)</td>
-<td style="text-align:center">将流中的每个元素利用函数映射为另一个元素</td>
-<td style="text-align:center">Stream<r></r></td>
-</tr>
-<tr>
-<td style="text-align:center">flatMap(Function&lt;T,R&gt;)</td>
-<td style="text-align:center">将分散的流组合成一个整体的Stream</td>
-<td style="text-align:center">Stream<r></r></td>
-</tr>
-</tbody>
-</table>
-<h5 id="中间操作示例："><a href="#中间操作示例：" class="headerlink" title="中间操作示例："></a>中间操作示例：</h5><p>map映射：参数为Function接口，将流中的每个元素利用函数映射为另一个元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map(Student::getName)   <span class="comment">//学生转为了学生姓名流返回</span></span><br></pre></td></tr></table></figure>
-<p>flatMap：将多个T对象转为多个Stream<r>，再做一个归集，将多个Stream<r>归集为一个Stream<r>  </r></r></r></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFlatMap</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//去重，打印出字符串组成</span></span><br><span class="line">        List&lt;String&gt; list = Arrays.asList(<span class="string">"ABC"</span>,<span class="string">"XYZ"</span>,<span class="string">"ZZC"</span>,<span class="string">"MZC"</span>,<span class="string">"DHG"</span>,<span class="string">"BCZ"</span>,<span class="string">"MDG"</span>);</span><br><span class="line">        Stream&lt;String&gt; res = list.stream().flatMap(<span class="keyword">new</span> Function&lt;String, Stream&lt;String&gt;&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Stream&lt;String&gt; <span class="title">apply</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                String[] ss = s.split(<span class="string">""</span>);</span><br><span class="line">                Stream&lt;String&gt; result = Arrays.stream(ss);</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        Stream&lt;String&gt; res2 = list.stream().flatMap(s-&gt;&#123;</span><br><span class="line">            String[] ss = s.split(<span class="string">""</span>);</span><br><span class="line">            Stream&lt;String&gt; result = Arrays.stream(ss);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//res2.distinct().collect(Collectors.toList()).forEach(System.out::println);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Stream&lt;String[]&gt; stream1 = list.stream().map(s-&gt;s.split(<span class="string">""</span>));</span><br><span class="line">        Stream&lt;String&gt; res3 = stream1.flatMap(s-&gt;Arrays.stream(s));  <span class="comment">//静态方法：(Arrays::stream)</span></span><br><span class="line"></span><br><span class="line">        res3.distinct().collect(Collectors.toList()).forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="终端操作-Stream-lt-T-gt"><a href="#终端操作-Stream-lt-T-gt" class="headerlink" title="终端操作 Stream&lt;T&gt;"></a>终端操作 <code>Stream&lt;T&gt;</code></h5><table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:center">作用</th>
-<th style="text-align:center">返回值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">count()</td>
-<td style="text-align:center">返回元素的个数</td>
-<td style="text-align:center">long</td>
-</tr>
-<tr>
-<td style="text-align:center">forEach(Consumer)</td>
-<td style="text-align:center">遍历Stream中的所有元素</td>
-<td style="text-align:center">void</td>
-</tr>
-<tr>
-<td style="text-align:center">max(Comparator) / min(Comparator)</td>
-<td style="text-align:center">找最大/最小的元素</td>
-<td style="text-align:center">Optional<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">findAny()</td>
-<td style="text-align:center">找到Stream中的某个对象</td>
-<td style="text-align:center">Optional<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">findFirst()</td>
-<td style="text-align:center">找到Stream中的第一个对象</td>
-<td style="text-align:center">Optional<t></t></td>
-</tr>
-<tr>
-<td style="text-align:center">allMatch(Predicate)</td>
-<td style="text-align:center">判断流中的元素是否都匹配条件</td>
-<td style="text-align:center">boolean</td>
-</tr>
-<tr>
-<td style="text-align:center">anyMatch(Predicate)</td>
-<td style="text-align:center">判断流中得到元素是否有一个能匹配条件</td>
-<td style="text-align:center">boolean</td>
-</tr>
-<tr>
-<td style="text-align:center">noneMatch(Predicate)</td>
-<td style="text-align:center">判断流中的元素是否都不能匹配条件</td>
-<td style="text-align:center">boolean</td>
-</tr>
-<tr>
-<td style="text-align:center">collect(Collector&lt;T,A,R&gt;)</td>
-<td style="text-align:center">收集流中的元素</td>
-<td style="text-align:center">R</td>
-</tr>
-</tbody>
-</table>
-<p>R  collect(Collector)     Collector: 收集器    &lt;T,A,R&gt;    将Stream<t> 转化收集最终成为 R对象</t></p>
-<p>Collectors 工具类, 可以得到常用的各种Collector</p>
-<h3 id="3-Collectors中的常用静态方法"><a href="#3-Collectors中的常用静态方法" class="headerlink" title="3. Collectors中的常用静态方法:"></a>3. Collectors中的常用静态方法:</h3><p>注意：Collectors收集器中静态方法的返回值：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;k, List&lt;T&gt;&gt;,</span><br><span class="line">Map&lt;K, Optional&lt;T&gt;&gt;</span><br><span class="line">Map&lt;K, T&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Collector&lt;T,?,List&lt;T&gt;&gt; toList()  将流中的所有对象放入List 返回:List&lt;T&gt;</span><br><span class="line"> 案例:  List&lt;Student&gt; result = students.stream().collect( Collectors.toList() );</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Collector&lt;T,?,Double&gt; averagingInt(ToIntFunction&lt;? <span class="keyword">super</span> T&gt; mapper)</span><br><span class="line">       将若干<span class="keyword">int</span>数据计算平均值    返回值: Double</span><br><span class="line">       案例: <span class="keyword">double</span> result  = students.stream().collect(Collectors.averagingInt(Student::getScore));</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Collector&lt;T,?,Integer&gt; summingInt(ToIntFunction&lt;? <span class="keyword">super</span> T&gt; mapper)</span><br><span class="line">    将若干<span class="keyword">int</span>数组计算和   返回值 <span class="keyword">int</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Collector&lt;T,?,Optional&lt;T&gt;&gt; maxBy(Comparator&lt;? <span class="keyword">super</span> T&gt; comparator)</span><br><span class="line">    求所有对象的最大值    返回值 Optional&lt;T&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Collector&lt;T,?,IntSummaryStatistics&gt; summarizingInt(ToIntFunction&lt;? <span class="keyword">super</span> T&gt; mapper)</span><br><span class="line">    求若干<span class="keyword">int</span>的数量, 最大值, 最小值 总和 , 平均值</span><br><span class="line">   案例: 		IntSummaryStatistics  result =                  students.stream().collect(Collectors.summarizingInt(Student::getScore));</span><br><span class="line">		System.out.println(result.getCount());</span><br><span class="line">		System.out.println(result.getMax());</span><br><span class="line">		System.out.println(result.getMin());</span><br><span class="line">		System.out.println(result.getSum());</span><br><span class="line">		System.out.println(result.getAverage());</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Collector&lt;CharSequence,?,String&gt; joining(CharSequence delimiter)</span><br><span class="line">    将流中的所有对象拼成String  , delemiter作为分隔符</span><br><span class="line">   案例: 		List&lt;String&gt; list= Arrays.asList(<span class="string">"Liucy"</span>,<span class="string">"Wangyx"</span>,<span class="string">"Yangdd"</span>,<span class="string">"Huxz"</span>);</span><br><span class="line">		String result = list.stream().collect(Collectors.joining(<span class="string">","</span>));</span><br><span class="line">		System.out.println(result);</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,K&gt; Collector&lt;T,?,Map&lt;K,List&lt;T&gt;&gt;&gt; groupingBy(Function&lt;T, K&gt; classifier)</span><br><span class="line">    将流中的对象,按Function中的结果K,做分组, 元素分别放入List中   返回值: Map&lt;K,List&lt;T&gt;&gt;</span><br><span class="line">    案例: Map&lt;String,List&lt;Student&gt;&gt; result = students.stream().collect(groupingBy(Student::getClassNumber));</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,K,A,D&gt; Collector&lt;T,?,Map&lt;K,D&gt;&gt; groupingBy(Function&lt;T,K&gt; classifier, Collector&lt;T,A,D&gt; downstream)</span><br><span class="line">    将流中的对象,按Function中的结果K,做分组, 再把分组的元素利用downstream</span><br><span class="line">    收集为D对象,作为Map的值  返回值: Map&lt;K,D&gt;</span><br><span class="line">    案例: Map&lt;String,Double&gt; result = students.stream().collect(</span><br><span class="line">				groupingBy(Student::getClassNumber,averagingInt(Student::getScore)</span><br><span class="line">		));</span><br><span class="line">		result.forEach((s,d)-&gt;System.out.println(s+<span class="string">":"</span>+d));</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,A,R,RR&gt; <span class="function">Collector&lt;T,A,RR&gt; <span class="title">collectingAndThen</span><span class="params">(Collector&lt;T,A,R&gt; downstream, Function&lt;R,RR&gt; finisher)</span></span></span><br><span class="line"><span class="function">    先利用downstream做数据收集, 结果R, 然后将收集的R数据利用finisher函数转换为RR对象</span></span><br><span class="line"><span class="function">    案例: Student s </span>= students.stream().collect(collectingAndThen(maxBy(comparing(Student::getScore)),Optional::get));</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,U,A,R&gt; Collector&lt;T,?,R&gt; mapping(Function&lt;T, U&gt; mapper,</span><br><span class="line">                                                 Collector&lt;U,A,R&gt; downstream)</span><br><span class="line">    先利用函数 将流中的T对象,转换为U对象, 再利用downstream,将U对象收集为R对象</span><br><span class="line">    案例: String result = students.stream().collect(mapping(Student::getName, joining(<span class="string">","</span>)));</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,D,A&gt; Collector&lt;T,?,Map&lt;Boolean,D&gt;&gt; partitioningBy(Predicate&lt;T&gt; predicate, Collector&lt;T,A,D&gt; downstream)</span><br><span class="line">    先利用谓词,将流中的对象按<span class="keyword">true</span>,<span class="keyword">false</span>分为两组, 再将每组的对象利用downstream收集为D对象,放入map</span><br><span class="line">    案例: Map&lt;Boolean,Double&gt; result = students.stream().collect(partitioningBy(Student::isMale,averagingInt(Student::getScore)));</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="4-数值流"><a href="#4-数值流" class="headerlink" title="4.数值流"></a>4.数值流</h4><h5 id="基本类型的特化"><a href="#基本类型的特化" class="headerlink" title="基本类型的特化"></a>基本类型的特化</h5><ul>
-<li><p>IntStream DoubleStream LongStream</p>
-</li>
-<li><p>Stream<t> -&gt; IntStream</t></p>
-<ul>
-<li>mapToInt(ToIntFunction<t>)    T–&gt;int</t></li>
-</ul>
-</li>
-<li>IntStream -&gt;  Stream<integer><ul>
-<li>boxed()</li>
-</ul>
-</integer></li>
-<li>数值范围<ul>
-<li>range(1,100) 左开右闭</li>
-<li>rangeClosed(1,100)  左闭又闭</li>
-</ul>
-</li>
-</ul>
-<p>在一些中间操作中，涉及Int转为Integer或Integer转为Int，中间操作就包含了大量的封箱与拆箱，使得效率低下，因此引入了数值流，使流可以存放基本数据类型：</p>
-<blockquote>
-<p>1）Stream<t>    —&gt;    IntStream：来自Stream的mapToInt()方法</t></p>
-<p>   mapToInt(ToIntFunction<t>)    T—&gt;int</t></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&gt;    Stream&lt;Employee&gt; stream1 = list.stream();</span><br><span class="line">&gt;    <span class="comment">//Stream&lt;Integer&gt; stream2 = stream1.map(Employee::getAge);</span></span><br><span class="line">&gt;    IntStream stream2 = stream1.mapToInt(Employee::getAge);</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>2）IntStream   —&gt;   Stream<t>：来自IntStream的boxed()方法</t></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;IntStream stream2 = stream1.mapToInt(Employee::getAge);</span><br><span class="line">&gt;Stream&lt;Integer&gt; resStream = stream2.boxed()</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h5 id="创建数值流"><a href="#创建数值流" class="headerlink" title="创建数值流"></a>创建数值流</h5><blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; IntStream in = IntStream.range(<span class="number">1</span>, <span class="number">100</span>);  <span class="comment">//1-99  类似于Python</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; IntStream in = IntStream.rangeClosed(<span class="number">1</span>, <span class="number">100</span>); <span class="comment">//1-100</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>使用IntStream流做一个质数判断：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValueStream</span> </span>&#123;</span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">&gt;         <span class="comment">/*Predicate&lt;Integer&gt; prime =  n-&gt;&#123;</span></span><br><span class="line"><span class="comment">&gt;             for (int i = 2; i &lt;= Math.sqrt(n); i++) &#123;</span></span><br><span class="line"><span class="comment">&gt;                 if(n % i == 0) return false;</span></span><br><span class="line"><span class="comment">&gt;             &#125;</span></span><br><span class="line"><span class="comment">&gt;             return true;</span></span><br><span class="line"><span class="comment">&gt;         &#125;;*/</span></span><br><span class="line">&gt;         </span><br><span class="line">&gt;         Predicate&lt;Integer&gt; p2 = n -&gt;&#123;</span><br><span class="line">&gt;             IntStream ist = IntStream.rangeClosed(<span class="number">2</span>, (<span class="keyword">int</span>)Math.sqrt(n));</span><br><span class="line">&gt;             <span class="keyword">return</span> ist.noneMatch(i-&gt;n % i == <span class="number">0</span>);<span class="comment">//如果没有任何一个匹配取余为0，就为true返回</span></span><br><span class="line">&gt;         &#125;;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-
-          
+          <p>函数式数据处理<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/16/test-title/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -550,7 +376,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">nexxt95</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -606,7 +432,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">nexxt95</span>
 
   
 </div>
