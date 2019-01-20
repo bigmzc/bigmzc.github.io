@@ -85,8 +85,8 @@
 <meta property="og:site_name" content="Nexxt95">
 <meta property="og:description" content="Java Message Service 消息中间件的组成 消息机制-点对点与发布订阅 消息中间件的应用场景">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/nexxt/Desktop/Temp.assets/20180417-1.png">
-<meta property="og:image" content="c:/Users/nexxt/Desktop/Temp.assets/20180417-2.png">
+<meta property="og:image" content="f:/Hexo/test/source/_posts/MQ详解及中间件产品比较/20180417-1.png">
+<meta property="og:image" content="f:/Hexo/test/source/_posts/MQ详解及中间件产品比较/20180417-2.png">
 <meta property="og:image" content="c:/Users/nexxt/Desktop/Temp.assets/20170816171523564.jpg">
 <meta property="og:image" content="c:/Users/nexxt/Desktop/消息队列概述.assets/1.jpg">
 <meta property="og:image" content="c:/Users/nexxt/Desktop/消息队列概述.assets/2.jpg">
@@ -97,11 +97,11 @@
 <meta property="og:image" content="c:/Users/nexxt/Desktop/消息队列概述.assets/聊天室.jpg">
 <meta property="og:image" content="c:/Users/nexxt/Desktop/消息队列概述.assets/电商.jpg">
 <meta property="og:image" content="f:/Hexo/test/source/_posts/activeMQ1/日志.jpg">
-<meta property="og:updated_time" content="2019-01-20T02:33:48.491Z">
+<meta property="og:updated_time" content="2019-01-20T07:10:34.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MQ详解及中间件产品比较">
 <meta name="twitter:description" content="Java Message Service 消息中间件的组成 消息机制-点对点与发布订阅 消息中间件的应用场景">
-<meta name="twitter:image" content="c:/Users/nexxt/Desktop/Temp.assets/20180417-1.png">
+<meta name="twitter:image" content="f:/Hexo/test/source/_posts/MQ详解及中间件产品比较/20180417-1.png">
 
 
 
@@ -428,13 +428,13 @@
 <li>目的地必须是队列</li>
 </ul>
 <p>应用场景:订单和商品,应用解耦</p>
-<p><img src="C:\Users\nexxt\Desktop\Temp.assets\20180417-1.png" alt=""></p>
+<p><img src="F:\Hexo\test\source\_posts\MQ详解及中间件产品比较\20180417-1.png" alt=""></p>
 <h6 id="2-pub-and-sub-发布订阅"><a href="#2-pub-and-sub-发布订阅" class="headerlink" title="2.pub and sub(发布订阅)"></a>2.pub and sub(发布订阅)</h6><ul>
 <li>一个消息有多个消费者</li>
 <li>时间上有依赖性(后来的消费者无法消费订阅到以前的消息)</li>
 </ul>
 <p>应用场景:app的消息推送</p>
-<p><img src="C:\Users\nexxt\Desktop\Temp.assets\20180417-2.png" alt=""></p>
+<p><img src="F:\Hexo\test\source\_posts\MQ详解及中间件产品比较\20180417-2.png" alt=""></p>
 <h2 id="5-消息中间件的优势"><a href="#5-消息中间件的优势" class="headerlink" title="5.消息中间件的优势"></a>5.消息中间件的优势</h2><h5 id="1）系统解耦"><a href="#1）系统解耦" class="headerlink" title="1）系统解耦"></a>1）系统解耦</h5><p>交互系统之间没有直接的调用关系，只是通过消息传输，故系统侵入性不强，耦合度低。</p>
 <h5 id="2）提高系统响应时间"><a href="#2）提高系统响应时间" class="headerlink" title="2）提高系统响应时间"></a>2）提高系统响应时间</h5><p>例如原来的一套逻辑，完成支付可能涉及先修改订单状态、计算会员积分、通知物流配送几个逻辑才能完成；通过MQ架构设计，就可将紧急重要（需要立刻响应）的业务放到该调用方法中，响应要求不高的使用消息队列，放到MQ队列中，供消费者处理。</p>
 <h5 id="3）为大数据处理架构提供服务"><a href="#3）为大数据处理架构提供服务" class="headerlink" title="3）为大数据处理架构提供服务"></a>3）<strong>为大数据处理架构提供服务</strong></h5><p>通过消息作为整合，大数据的背景下，消息队列还与实时处理架构整合，为数据处理提供性能支持。</p>
@@ -647,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
