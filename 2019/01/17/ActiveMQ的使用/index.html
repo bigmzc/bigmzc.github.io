@@ -85,12 +85,12 @@
 <meta property="og:site_name" content="Nexxt95">
 <meta property="og:description" content="Java环境下的使用 ActiveMQ集成spring ActiveMQ集成springboot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/17/ActiveMQ的使用/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png">
 <meta property="og:updated_time" content="2019-01-20T02:28:53.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ的使用">
 <meta name="twitter:description" content="Java环境下的使用 ActiveMQ集成spring ActiveMQ集成springboot">
-<meta name="twitter:image" content="c:/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/17/ActiveMQ的使用/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png">
 
 
 
@@ -392,7 +392,7 @@
 </ul>
 <h2 id="ActiveMQ的引言"><a href="#ActiveMQ的引言" class="headerlink" title="ActiveMQ的引言"></a>ActiveMQ的引言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActiveMQ是由Apache出品的，一款最流行的，能力强劲的消息中间件（MOM：Message Orient middleware）。并且是对消息通信规范JMS的一种具体实现</span><br></pre></td></tr></table></figure>
 <h2 id="1-安装ActiveMQ"><a href="#1-安装ActiveMQ" class="headerlink" title="1.安装ActiveMQ"></a>1.安装ActiveMQ</h2><h6 id="1-搭建java环境"><a href="#1-搭建java环境" class="headerlink" title="1.搭建java环境"></a>1.搭建java环境</h6><h6 id="2-安装ActiveMq"><a href="#2-安装ActiveMq" class="headerlink" title="2.安装ActiveMq"></a>2.安装ActiveMq</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.解压activemq的tar -zxvf  </span><br><span class="line">2.修改映射文件  将主机名映射本机的ip   /etc/hosts</span><br></pre></td></tr></table></figure>
-<h6 id="3-测试访问web的控制界面"><a href="#3-测试访问web的控制界面" class="headerlink" title="3.测试访问web的控制界面"></a>3.测试访问web的控制界面</h6><p><img src="C:/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png" alt=""></p>
+<h6 id="3-测试访问web的控制界面"><a href="#3-测试访问web的控制界面" class="headerlink" title="3.测试访问web的控制界面"></a>3.测试访问web的控制界面</h6><p><img src="/2019/01/17/ActiveMQ的使用/Users/nexxt/Desktop/%E5%90%8E%E6%9C%9F/ActiveMQ/%E5%9B%BE%E7%AC%94%E8%AE%B0/4.png" alt=""></p>
 <h2 id="2-java操作ActiveMQ"><a href="#2-java操作ActiveMQ" class="headerlink" title="2.java操作ActiveMQ"></a>2.java操作ActiveMQ</h2><h3 id="1-点对点-p2p"><a href="#1-点对点-p2p" class="headerlink" title="1.点对点(p2p)"></a>1.点对点(p2p)</h3><h4 id="1-生产者"><a href="#1-生产者" class="headerlink" title="1.生产者"></a>1.生产者</h4><h6 id="1-相关依赖"><a href="#1-相关依赖" class="headerlink" title="1.相关依赖"></a>1.相关依赖</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h6 id="2-开发步骤"><a href="#2-开发步骤" class="headerlink" title="2.开发步骤"></a>2.开发步骤</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">     <span class="comment">//tcp连接</span></span><br><span class="line">    String brokerURL = <span class="string">"tcp://192.168.106.135:61616"</span>;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testProducter</span><span class="params">()</span> <span class="keyword">throws</span> JMSException </span>&#123;</span><br><span class="line">		<span class="comment">//1.连接工厂</span></span><br><span class="line">        ConnectionFactory connectionFactory = <span class="keyword">new</span> ActiveMQConnectionFactory(brokeURl);</span><br><span class="line">		<span class="comment">//2.创建连接</span></span><br><span class="line">        Connection connection = connectionFactory.createConnection();</span><br><span class="line">		connection.start();  <span class="comment">//开启连接</span></span><br><span class="line">		<span class="comment">//3.创建会话</span></span><br><span class="line">        <span class="comment">//第一个参数 代表第二参数是否生效开启事务  参数二 自动发送回执</span></span><br><span class="line">        Session session = connection.createSession(<span class="keyword">true</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">		<span class="comment">//4.创建生产者</span></span><br><span class="line">        Destination destination = <span class="keyword">new</span> ActiveMQQueue(<span class="string">"javaQueue"</span>);</span><br><span class="line">        MessageProducer producer = session.createProducer(destination);</span><br><span class="line">		<span class="comment">//5.创建消息 session获取或者直接new ActiveMQTextMessage()等不同的实现类</span></span><br><span class="line">        TextMessage textMessage = session.createTextMessage();</span><br><span class="line">        textMessage.setText(<span class="string">"hello rlk"</span>);</span><br><span class="line"><span class="comment">//        6.使用生产者发送消息</span></span><br><span class="line">        producer.send(textMessage);</span><br><span class="line"><span class="comment">//        7.提交  提交是必须的</span></span><br><span class="line">        session.commit();</span><br><span class="line"><span class="comment">//        8.关闭</span></span><br><span class="line">        producer.close();</span><br><span class="line">        session.close();</span><br><span class="line">        connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-消费者"><a href="#2-消费者" class="headerlink" title="2.消费者"></a>2.消费者</h4><h6 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建工厂</span></span><br><span class="line"><span class="comment">//2.创建连接</span></span><br><span class="line"><span class="comment">//3.启动连接</span></span><br><span class="line"><span class="comment">//4.创建会话</span></span><br><span class="line"><span class="comment">//5.创建目的地</span></span><br><span class="line"><span class="comment">//6.创建消费者</span></span><br><span class="line"><span class="comment">//7.获取消息</span></span><br><span class="line"><span class="comment">//8.关闭</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testConsumer</span><span class="params">()</span> <span class="keyword">throws</span> JMSException </span>&#123;</span><br><span class="line">        ConnectionFactory connectionFactory = <span class="keyword">new</span> ActiveMQConnectionFactory(brokerURL);</span><br><span class="line">        Connection connection = connectionFactory.createConnection();</span><br><span class="line">        connection.start();</span><br><span class="line">        Session session = connection.createSession(<span class="keyword">true</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">        Destination destination = <span class="keyword">new</span> ActiveMQQueue(<span class="string">"javaQueue"</span>);</span><br><span class="line">        MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">        TextMessage receive =(TextMessage) consumer.receive();</span><br><span class="line">        String text = receive.getText();</span><br><span class="line">        System.out.println(text);</span><br><span class="line">        session.commit(); <span class="comment">//不commit就没有回执</span></span><br><span class="line">        consumer.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -454,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/20/testarticle/" rel="prev" title="testarticle">
-                testarticle <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -583,7 +579,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                    <a href="mailto:mzc19971103@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -691,9 +687,10 @@
   
 
 
+
+
   
-
-
+  
 
 
 
@@ -735,7 +732,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
